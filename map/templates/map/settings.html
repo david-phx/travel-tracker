@@ -1,0 +1,139 @@
+{% extends "map/layout.html" %}
+{% load static %}
+
+{% block title %}Settings{% endblock %}
+
+{% block body %}
+
+    <div class="row justify-content-center my-5">
+        <div class="col col-12 col-lg-2 border rounded px-4 pb-4 mb-3">
+            <div class="row">
+                <div class="col">
+                    <i class="bi bi-person-circle" style="font-size: 7em;"></i>
+                    <h3>{{ profile.username }}</h3>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <strong>Name:</strong> {{ profile.first_name }} {{ profile.last_name }}<br>
+                    <strong>Joined:</strong> {{ profile.date_joined|date:'Y-m-d' }}
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    {% if profile == user %}
+                        <a href="{% url 'profile' user.username %}" class="btn btn-outline-primary">Back to Profile</a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col col-12 col-lg-10 px-4 pb-4">
+
+            {% if message %}
+                <div class="alert alert-{{ message_status }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+
+            <h3 class="mb-3">Edit Profile</h3>
+
+            <form action="{% url 'settings' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="section" id="section" value="profile">
+                <div class="mb-3 row">
+                    <label for="username" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col">
+                        <input class="form-control" id="username" name="username" type="text" value="{{ profile.username }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col">
+                        <input class="form-control" id="email" name="email" type="email" value="{{ profile.email }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="first_name" class="col-sm-2 col-form-label">First Name</label>
+                    <div class="col">
+                        <input class="form-control" id="first_name" name="first_name" type="text" value="{{ profile.first_name }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="last_name" class="col-sm-2 col-form-label">Last Name</label>
+                    <div class="col">
+                        <input class="form-control" id="last_name" name="last_name" type="text" value="{{ profile.last_name }}" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-end">
+                        <button class="btn btn-primary" type="submit">Save Profile</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <h3 class="mb-3">Change Password</h3>
+
+            <form action="{% url 'settings' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="section" id="section" value="password">
+
+            <div class="mb-3 row">
+                <label for="last_name" class="col-sm-2 col-form-label">New Pasword</label>
+                <div class="col">
+                    <input class="form-control" id="new_password" name="new_password" type="password" required>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="last_name" class="col-sm-2 col-form-label">Confirm Password</label>
+                <div class="col">
+                    <input class="form-control" id="confirm_password" name="confirm_password" type="password" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col text-end">
+                    <button class="btn btn-primary" type="submit">Update Password</button>
+                </div>
+            </div>
+
+            </form>
+
+            <h3 class="mb-3">Settings</h3>
+
+            <form action="{% url 'settings' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="section" id="section" value="settings">
+                <div class="mb-3 row">
+                    <label for="trips_per_page" class="col-sm-2 col-form-label">Trips per Page</label>
+                    <div class="col">
+                        <select class="form-select" id="trips_per_page" name="trips_per_page" required>
+                            <option value="5" {% if profile.trips_per_page == 5 %}selected{% endif %}>5</option>
+                            <option value="10" {% if profile.trips_per_page == 10 %}selected{% endif %}>10</option>
+                            <option value="25" {% if profile.trips_per_page == 25 %}selected{% endif %}>25</option>
+                            <option value="50" {% if profile.trips_per_page == 50 %}selected{% endif %}>50</option>
+                            <option value="100" {% if profile.trips_per_page == 100 %}selected{% endif %}>100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-end">
+                        <button class="btn btn-primary" type="submit">Save Settings</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

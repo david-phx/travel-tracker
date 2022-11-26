@@ -1,0 +1,40 @@
+{% extends "map/layout.html" %}
+{% load static %}
+
+{% block title %}{{ state.name }}{% endblock %}
+
+{% block body %}
+
+<div class="row justify-content-center my-5">
+    <div class="col col-12 col-md-2 border rounded px-4 pb-4 mb-3">
+        <img src="{% static 'map/flags/' %}{{ state.code }}.svg" class="img-thumbnail my-3">
+        State code: <strong>{{ state.code }}</strong><br>
+        Region: <strong>{{ state.get_region_display }}</strong><br>
+
+        {% if user.is_authenticated %}
+            <p class="my-4"><a href="{% url 'trips' %}?state={{ state.code }}" >My trips to {{ state.name }}</a></p>
+        {% endif %}
+    </div>
+
+    <div class="col col-12 col-md-10 px-4 pb-4">
+        <h1>{{ state.name }}</h1>
+
+        {{ state_info|safe }}
+
+        {% if user.is_authenticated %}
+            <h3>Most Recent Trips to {{ state.name }}</h3>
+
+            <ul>
+                {% for trip in trips %}
+                    <li>{{ trip.location }} <span class="text-muted">({{ trip.date1 }} &ndash; {{ trip.date2 }})</span></li>
+                {% empty %}
+                    No recent trips
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

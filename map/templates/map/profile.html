@@ -1,0 +1,73 @@
+{% extends "map/layout.html" %}
+{% load static %}
+
+{% block title %}{{ profile.username }}{% endblock %}
+
+{% block body %}
+
+    <div class="row justify-content-center my-5">
+        <div class="col col-12 col-lg-2 border rounded px-4 pb-4 mb-3">
+            <div class="row">
+                <div class="col">
+                    <i class="bi bi-person-circle" style="font-size: 7em;"></i>
+                    <h3>{{ profile.username }}</h3>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <strong>Name:</strong> {{ profile.first_name }} {{ profile.last_name }}<br>
+                    <strong>Joined:</strong> {{ profile.date_joined|date:'Y-m-d' }}
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    {% if profile == user %}
+                        <a href="{% url 'settings' %}" class="btn btn-outline-primary">Edit Profile</a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col col-12 col-lg-10 px-4 pb-4">
+            <h3 class="mb-3">Visited States</h3>
+            {% for state in visited_states|dictsort:'name' %}
+                <a href="{% url 'state' state.code %}">{{state.name}}</a>{% if not forloop.last %},{% endif %}
+            {% empty %}
+                No trips yet
+            {% endfor %}
+
+            <div class="progress my-4" style="height: 30px;">
+                <div class="progress-bar" role="progressbar" style="width: {{ progress|floatformat:"0" }}%">{{ progress|floatformat:"0" }}%</div>
+            </div>
+
+            <h3 class="my-3">States Yet to Visit</h3>
+
+            {% for state in states_to_visit|dictsort:'name' %}
+                <a href="{% url 'state' state.code %}">{{state.name}}</a>{% if not forloop.last %},{% endif %}
+            {% empty %}
+                You've been to every state
+            {% endfor %}
+
+
+            <h3 class="my-4">Achievements</h3>
+
+            <div class="mb-3">
+
+                {% for achievement in achievements|dictsort:'pk' %}
+
+                    <div class="border border-{{ achievement.color }} rounded me-2 mb-3 d-inline-block" style="width: 10rem;">
+                        <div class="text-bg-{{ achievement.color }} text-center px-3 py-1"><strong>{{ achievement.title|upper }}</strong></div>
+                        <div class="text-center p-2"><i class="bi bi-{{ achievement.icon }} text-{{ achievement.color }}" style="font-size: 4em;"></i></div>
+                        <div class="text-bg-{{ achievement.color }} text-center px-2 py-1">{{ achievement.description }}</div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

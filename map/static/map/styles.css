@@ -1,0 +1,41 @@
+svg {
+    width: 90%;
+    height: auto;
+}
+
+path {
+    stroke: white;
+    fill: lightgray !important;
+    transition: fill .5s ease;
+    transform-origin: center center;
+}
+
+path:hover {
+    fill: gray !important;
+    cursor: pointer;
+    transform: scale(1.005, 1.005);
+}
+
+#info-box {
+    box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.7);
+    opacity: 0%;
+    padding: .7rem;
+    border-radius: 5px;
+    font-size: 16pt;
+    position: fixed;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    transform: translateX(-50%);
+    transition: opacity .4s ease;
+    z-index: 2000;
+}
+
+#alert {
+    position: fixed;
+    width: 500px;
+    top: 65px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}

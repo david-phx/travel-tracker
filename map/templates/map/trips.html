@@ -1,0 +1,213 @@
+{% extends "map/layout.html" %}
+{% load static %}
+{% load templatetags %}
+
+{% block title %}My Trips{% endblock %}
+
+{% block body %}
+
+  <!-- Edit Trip Modal -->
+  <div class="modal fade" id="editTripModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="editTripModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editModalLabel">Edit Trip</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+              <!-- Edit trip inputs START -->
+              <div class="row my-3">
+                <div class="col">
+                  <input class="form-control" type="text" id="edit-location" name="location" placeholder="Location (required)" maxlength="50" required>
+                </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col">
+                      <select class="form-select" id="edit-state" name="state" required>
+                          <option selected disabled hidden>State (required)</option>
+                          {% for state in states %}
+                            <option value="{{ state.code }}">{{ state.name }}</option>
+                          {% endfor %}
+                      </select>
+                  </div>
+              </div>
+              <div class="row g-3">
+                  <div class="col">
+                      <div class="input-group">
+                          <span class="input-group-text">From</span>
+                          <input class="form-control" id="edit-date1" name="date1" type="date">
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="input-group">
+                          <span class="input-group-text">To</span>
+                          <input class="form-control" id="edit-date2" name="date2" type="date">
+                      </div>
+
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col">
+                      <textarea class="form-control" id="edit-description" name="description" rows="5" placeholder="Brief trip description"></textarea>
+                      <div id="form-help" class="form-text">Dates and trip description are optional</div>
+                  </div>
+              </div>
+              <!-- Edit trip inputs END -->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" id="reset-trip-button">Reset</button>
+          <button type="button" class="btn btn-primary" id="edit-trip-button">Edit Trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Edit Trip Modal -->
+
+  <!-- Delete Trip Modal -->
+  <div class="modal fade" id="deleteTripModal" tabindex="-1" aria-labelledby="deleteTripModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Trip</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+              Are you sure you want to delete your trip to <strong id="trip-destination"></strong>? This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="delete-trip-button">Delete Trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Delete Trip Modal -->
+
+<h2 class="my-3">My Trips</h2>
+
+<form>
+<div class="row my-4 gx-2">
+
+    <div class="col-4">
+        <input type="text" class="form-control" id="form-location" name="loc" placeholder="Location" {% if get_location != None %}value={{get_location}}{% endif %}>
+    </div>
+
+    <div class="col">
+        <select class="form-select" id="form-state" name="state" required>
+            <option {% if get_state == None %}selected{% endif %} disabled hidden>State</option>
+            <option value="" {% if get_state == '' %}selected{% endif %}>(all states)</option>
+
+            {% for state in states %}
+              <option value="{{ state.code }}" {% if state.code == get_state %}selected{% endif %}>{{ state.name }}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+
+
+    <div class="col-auto">
+      <div class="input-group">
+          <input class="form-control" id="form-date1" name="date1" type="date" {% if get_date1 != None %}value={{get_date1}}{% endif %}>
+          <span class="input-group-text">&ndash;</span>
+          <input class="form-control" id="form-date2" name="date2" type="date" {% if get_date2 != None %}value={{get_date2}}{% endif %}>
+      </div>
+    </div>
+
+
+    <div class="col-auto">
+      <select class="form-select" id="form-sort" name="sort" required>
+          <option selected disabled hidden>Sort by</option>
+          <option value="desc" {% if get_sort == 'desc' %}selected{% endif %}>Newest</option>
+          <option value="asc" {% if get_sort == 'asc' %}selected{% endif %}>Oldest</option>
+      </select>
+    </div>
+
+    <div class="col-auto">
+        <a href="{% url 'trips' %}" class="btn btn-outline-danger" type="button" id="reset-find-trips"><i class="bi bi-arrow-clockwise"></i></a>
+        <button class="btn btn-outline-primary" type="submit" id="find-trips"><i class="bi bi-search"></i> Find Trips</button>
+    </div>
+
+</div>
+</form>
+
+
+<div class="accordion" id="accordionTrips">
+
+  {% for trip in page %}
+
+    <div class="accordion-item" id="accordion-item-{{ trip.pk }}">
+      <h2 class="accordion-header" id="heading-{{ trip.pk }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ trip.pk }}">
+          <i class="bi bi-pin-map me-2"></i>
+          <strong><span id="trip-{{ trip.pk }}-location">{{ trip.location }}</span>, <span id="trip-{{ trip.pk }}-state">{{ trip.state }}</span></strong>
+
+          <span class="text-muted ms-2" id="trip-{{ trip.pk }}-dates">
+            {% if trip.date1 != None %}
+              {{ trip.date1|date:"M j, Y" }}
+            {% endif %}
+            {% if trip.date2 != None %}
+              &ndash; {{ trip.date2|date:"M j, Y" }}
+            {% endif %}
+          </span>
+
+        </button>
+      </h2>
+      <div id="collapse-{{ trip.pk }}" class="accordion-collapse collapse" data-bs-parent="#accordionTrips">
+        <div class="accordion-body">
+
+          <div class="row">
+            <div class="col" id="trip-{{ trip.pk }}-description">
+              {% if trip.description != ""  %}
+                {{ trip.description }}
+              {% endif %}
+            </div>
+            <div class="col-auto text-end">
+              <a href="{% url 'state' trip.state.code %}"><img src="{% static 'map/flags/' %}{{ trip.state.code }}.svg" class="rounded mb-3" width="110" id="trip-{{ trip.pk }}-flag"></a><br>
+              <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#editTripModal" data-bs-trip-id="{{ trip.pk }}">
+                <i class="bi bi-pencil"></i> Edit
+              </button>
+              <button class="btn btn-outline-danger" type="button" data-bs-toggle="modal" data-bs-target="#deleteTripModal" data-bs-trip="{{ trip }}" data-bs-trip-id="{{ trip.pk }}">
+                <i class="bi bi-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  {% empty %}
+    No trips found
+  {% endfor %}
+
+</div>
+
+<ul class="pagination mt-4">
+  {% if page.has_previous %}
+      <li class="page-item"><a class="page-link" href="?{% url_replace page=page.previous_page_number %}"><i class="bi bi-arrow-left"></i> Previouis</a></li>
+      {% if page.previous_page_number > 1 %}
+          <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+          {% if page.previous_page_number > 2 %}
+              <li class="page-item disabled"><span class="page-link">...</span></li>
+          {% endif %}
+      {% endif %}
+      <li class="page-item"><a class="page-link" href="?{% url_replace page=page.previous_page_number %}">{{ page.previous_page_number }}</a></li>
+  {% endif %}
+  <li class="page-item active"><a class="page-link">{{ page.number }}</a></li>
+  {% if page.has_next %}
+      <li class="page-item"><a class="page-link" href="?{% url_replace page=page.next_page_number %}">{{ page.next_page_number }}</a></li>
+      {% if page.next_page_number < page.paginator.num_pages %}
+          {% if page.next_page_number < page.paginator.num_pages|add:"-1" %}
+              <li class="page-item disabled"><span class="page-link">...</span></li>
+          {% endif %}
+          <li class="page-item"><a class="page-link" href="?{% url_replace page=page.paginator.num_pages %}">{{ page.paginator.num_pages }}</a></li>
+      {% endif %}
+      <li class="page-item"><a class="page-link" href="?{% url_replace page=page.next_page_number %}">Next <i class="bi bi-arrow-right"></i></a></li>
+  {% endif %}
+</ul>
+
+  <script src="{% static 'map/trips.js' %}"></script>
+{% endblock %}

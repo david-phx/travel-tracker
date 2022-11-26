@@ -1,0 +1,101 @@
+[
+    {
+        "model": "map.achievement",
+        "pk": 1,
+        "fields": {
+            "slug": "first-trip",
+            "icon": "geo",
+            "color": "secondary",
+            "title": "First Trip",
+            "description": "Added a Trip"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 2,
+        "fields": {
+            "slug": "ten-states",
+            "icon": "map",
+            "color": "primary",
+            "title": "Ten States",
+            "description": "Visited 10 States"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 3,
+        "fields": {
+            "slug": "twenty-states",
+            "icon": "map",
+            "color": "primary",
+            "title": "Twenty States",
+            "description": "Visited 20 States"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 4,
+        "fields": {
+            "slug": "thirty-states",
+            "icon": "map",
+            "color": "primary",
+            "title": "Thirty States",
+            "description": "Visited 30 States"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 5,
+        "fields": {
+            "slug": "forty-states",
+            "icon": "map",
+            "color": "primary",
+            "title": "Forty States",
+            "description": "Visited 40 States"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 6,
+        "fields": {
+            "slug": "all-states",
+            "icon": "map",
+            "color": "success",
+            "title": "All States",
+            "description": "Visited Every State"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 7,
+        "fields": {
+            "slug": "aloha",
+            "icon": "tsunami",
+            "color": "warning",
+            "title": "Aloha",
+            "description": "Visited Hawaii"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 8,
+        "fields": {
+            "slug": "freezing",
+            "icon": "thermometer-snow",
+            "color": "warning",
+            "title": "Freezing",
+            "description": "Alaska in Winter"
+        }
+    },
+    {
+        "model": "map.achievement",
+        "pk": 9,
+        "fields": {
+            "slug": "dry-heat",
+            "icon": "thermometer-sun",
+            "color": "warning",
+            "title": "It's a Dry Heat",
+            "description": "Arizona in Summer"
+        }
+    }
+]

@@ -1,0 +1,452 @@
+[
+    {
+        "model": "map.state",
+        "pk": 1,
+        "fields": {
+            "name": "Alabama",
+            "code": "AL",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 2,
+        "fields": {
+            "name": "Alaska",
+            "code": "AK",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 3,
+        "fields": {
+            "name": "Arizona",
+            "code": "AZ",
+            "region": "SW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 4,
+        "fields": {
+            "name": "Arkansas",
+            "code": "AR",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 5,
+        "fields": {
+            "name": "California",
+            "code": "CA",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 6,
+        "fields": {
+            "name": "Colorado",
+            "code": "CO",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 7,
+        "fields": {
+            "name": "Connecticut",
+            "code": "CT",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 8,
+        "fields": {
+            "name": "Delaware",
+            "code": "DE",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 9,
+        "fields": {
+            "name": "Florida",
+            "code": "FL",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 10,
+        "fields": {
+            "name": "Georgia",
+            "code": "GA",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 11,
+        "fields": {
+            "name": "Hawaii",
+            "code": "HI",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 12,
+        "fields": {
+            "name": "Idaho",
+            "code": "ID",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 13,
+        "fields": {
+            "name": "Illinois",
+            "code": "IL",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 14,
+        "fields": {
+            "name": "Indiana",
+            "code": "IN",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 15,
+        "fields": {
+            "name": "Iowa",
+            "code": "IA",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 16,
+        "fields": {
+            "name": "Kansas",
+            "code": "KS",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 17,
+        "fields": {
+            "name": "Kentucky",
+            "code": "KY",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 18,
+        "fields": {
+            "name": "Louisiana",
+            "code": "LA",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 19,
+        "fields": {
+            "name": "Maine",
+            "code": "ME",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 20,
+        "fields": {
+            "name": "Maryland",
+            "code": "MD",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 21,
+        "fields": {
+            "name": "Massachusetts",
+            "code": "MA",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 22,
+        "fields": {
+            "name": "Michigan",
+            "code": "MI",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 23,
+        "fields": {
+            "name": "Minnesota",
+            "code": "MN",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 24,
+        "fields": {
+            "name": "Mississippi",
+            "code": "MS",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 25,
+        "fields": {
+            "name": "Missouri",
+            "code": "MO",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 26,
+        "fields": {
+            "name": "Montana",
+            "code": "MT",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 27,
+        "fields": {
+            "name": "Nebraska",
+            "code": "NE",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 28,
+        "fields": {
+            "name": "Nevada",
+            "code": "NV",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 29,
+        "fields": {
+            "name": "New Hampshire",
+            "code": "NH",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 30,
+        "fields": {
+            "name": "New Jersey",
+            "code": "NJ",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 31,
+        "fields": {
+            "name": "New Mexico",
+            "code": "NM",
+            "region": "SW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 32,
+        "fields": {
+            "name": "New York",
+            "code": "NY",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 33,
+        "fields": {
+            "name": "North Carolina",
+            "code": "NC",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 34,
+        "fields": {
+            "name": "North Dakota",
+            "code": "ND",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 35,
+        "fields": {
+            "name": "Ohio",
+            "code": "OH",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 36,
+        "fields": {
+            "name": "Oklahoma",
+            "code": "OK",
+            "region": "SW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 37,
+        "fields": {
+            "name": "Oregon",
+            "code": "OR",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 38,
+        "fields": {
+            "name": "Pennsylvania",
+            "code": "PA",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 39,
+        "fields": {
+            "name": "Rhode Island",
+            "code": "RI",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 40,
+        "fields": {
+            "name": "South Carolina",
+            "code": "SC",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 41,
+        "fields": {
+            "name": "South Dakota",
+            "code": "SD",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 42,
+        "fields": {
+            "name": "Tennessee",
+            "code": "TN",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 43,
+        "fields": {
+            "name": "Texas",
+            "code": "TX",
+            "region": "SW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 44,
+        "fields": {
+            "name": "Utah",
+            "code": "UT",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 45,
+        "fields": {
+            "name": "Vermont",
+            "code": "VT",
+            "region": "NE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 46,
+        "fields": {
+            "name": "Virginia",
+            "code": "VA",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 47,
+        "fields": {
+            "name": "Washington",
+            "code": "WA",
+            "region": "W"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 48,
+        "fields": {
+            "name": "West Virginia",
+            "code": "WV",
+            "region": "SE"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 49,
+        "fields": {
+            "name": "Wisconsin",
+            "code": "WI",
+            "region": "MW"
+        }
+    },
+    {
+        "model": "map.state",
+        "pk": 50,
+        "fields": {
+            "name": "Wyoming",
+            "code": "WY",
+            "region": "W"
+        }
+    }
+]

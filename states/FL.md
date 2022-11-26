@@ -1,0 +1,9 @@
+*"Sunshine State"*
+
+- *State motto:* In God We Trust<br>
+- *State sapital:* Tallahassee<br>
+- *Largest city:* Jacksonville
+
+Florida is a state located in the Southeastern region of the United States. Florida is bordered to the west by the Gulf of Mexico, to the northwest by Alabama, to the north by Georgia, to the east by the Bahamas and Atlantic Ocean, and to the south by the Straits of Florida and Cuba; it is the only state that borders both the Gulf of Mexico and the Atlantic Ocean. Spanning 65,758 square miles (170,310 km2), Florida ranks 22nd in area among the 50 states, and with a population of over 21 million, is the third-most populous. The state capital is Tallahassee and the most populous city is Jacksonville. The Miami metropolitan area, with a population of almost 6.2 million, is the most populous urban area in Florida and the ninth-most populous in the United States; other urban conurbations with over one million people are Tampa Bay, Orlando, and Jacksonville.
+
+Various Native American groups have inhabited Florida for at least 14,000 years. In 1513, Spanish explorer Juan Ponce de León became the first known European to make landfall, calling the region La Florida ([la floˈɾiða] for its lush greenery and the Easter season (Pascua Florida in Spanish). Florida subsequently became the first area in the continental U.S. to be permanently settled by Europeans, with the Spanish colony of St. Augustine, founded in 1565, being the oldest continuously inhabited city. Florida was repeatedly contested by Spain and Great Britain, before being ceded to the U.S. in 1819; it was admitted as the 27th state on March 3, 1845. Florida was the principal location of the Seminole Wars (1816–1858), the longest and most extensive of the Indian Wars in U.S. history. The state seceded from the Union on January 10, 1861, becoming one of the seven original Confederate States. After the Civil War, Florida was restored to the Union on June 25, 1868.

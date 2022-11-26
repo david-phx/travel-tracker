@@ -1,0 +1,11 @@
+*"Mount Rushmore State"*
+
+- *State motto:* Under God the people rule<br>
+- *State sapital:* Pierre<br>
+- *Largest city:* Sioux Falls
+
+outh Dakota is a U.S. state in the North Central region of the United States. It is also part of the Great Plains. South Dakota is named after the Lakota and Dakota Sioux Native American tribes, who comprise a large portion of the population with nine reservations currently in the state and have historically dominated the territory. South Dakota is the seventeenth largest by area, but the 5th least populous, and the 5th least densely populated of the 50 United States. As the southern part of the former Dakota Territory, South Dakota became a state on November 2, 1889, simultaneously with North Dakota. They are the 39th and 40th states admitted to the union; President Benjamin Harrison shuffled the statehood papers before signing them so that no one could tell which became a state first. Pierre is the state capital, and Sioux Falls, with a population of about 192,200, is South Dakota's largest city.
+
+South Dakota is bordered by the states of North Dakota (to the north), Minnesota (to the east), Iowa (to the southeast), Nebraska (to the south), Wyoming (to the west), and Montana (to the northwest). The state is bisected by the Missouri River, dividing South Dakota into two geographically and socially distinct halves, known to residents as "East River" and "West River".
+
+Eastern South Dakota is home to most of the state's population, and the area's fertile soil is used to grow a variety of crops. West of the Missouri River, ranching is the predominant agricultural activity, and the economy is more dependent on tourism and defense spending. Most of the Native American reservations are in West River. The Black Hills, a group of low pine-covered mountains sacred to the Sioux, is in the southwest part of the state. Mount Rushmore, a major tourist destination, is there. South Dakota has a temperate continental climate, with four distinct seasons and precipitation ranging from moderate in the east to semi-arid in the west. The state's ecology features species typical of a North American grassland biome.
