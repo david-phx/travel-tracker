@@ -85,6 +85,6 @@ Finally, clicking "Edit Profile" button in the profile view or selecting "Settin
 
 Thank you to everyone in the CS50 team for yet another amazing course, and see you in the next one!
 
-**Project demo video:**
+**Project demo video:** https://youtu.be/bz8_NLs1x_w
 
 **Course link:** [CS50's Web Programming with Python and JavaScript](https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript)
