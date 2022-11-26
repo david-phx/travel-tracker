@@ -20,14 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-owp4q13fqm&z=(jx0&r^x&m@i*xwgc8$09_f6efs6%0sb_sfk!'
+SECRET_KEY = 'DONT-FORGET-TO-CHANGE-YOUR-SECRET-KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://david-phx-code50-110140992-x5g7qvp6w3vqwj-8000.githubpreview.dev']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1/']
 
 AUTH_USER_MODEL = "map.User"
 
