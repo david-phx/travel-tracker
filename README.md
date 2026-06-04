@@ -1,7 +1,5 @@
 # CS50W Capstone Project: My 50 States
 
-**Live demo:** [US Travel Tracker](https://travel-tracker.asatrian.com/)
-
 **Video demo:** https://youtu.be/bz8_NLs1x_w
 
 My capstone project for [*CS50's Web Programming with Python and JavaScript*](https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript) course is a web application that helps users track their travels across the USA all the way to hitting the ultimate goal of visiting all 50 of states, while awarding them with fun achievements as they go. The idea for the app was inspired by my own bucket list item to visit every US state, and hopefully a web app like this might help me and others with a similar goal to achieve it.
